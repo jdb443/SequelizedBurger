@@ -1,0 +1,113 @@
+<div class="container">
+    <div class="row">
+
+        <div class="card small h-25 col s12 m12 z-depth-5">
+            <h1 class="center eat title-rye">Eat-Da-Burger</h1>
+            <div class="center">
+                <img src="/assets/images/fast-food-burgerburger.png" width="150px" height="150px" >
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l6 m12 s12">
+            <div class="card horizontal">
+                <div class="card-stacked">
+
+                    <h3 class="center title-sancreek"><i class="fas fa-hamburger"></i>Available Burgers<i class="fas fa-hamburger"></i></h3>
+
+                    <div class="divider"></div>
+                    <div class="card-content">
+                        <div class="col s12 buttons">
+                            {{#each burgers}}
+                            {{#unless this.devoured}}
+                            <form action="/burgers/{{this.id}}" method="POST">
+                                <button class="btn waves-effect blue darken-4 marg-bot-10 waves-light uneaten truncate col s12 z-depth-5 hoverable tooltipped"
+                                    type="submit" name="action">{{this.burger_name}}
+
+                                </button>
+                            </form>
+                            {{/unless}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col l6 m12 s12">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <h3 class="center title-sancreek"><i class="fas fa-utensils"></i>Devoured Burgers<i class="fas fa-utensils"></i></h3>
+                    <div class="divider"></div>
+                    <div class="card-content">
+                        <div class="col s12 buttons">
+                            {{#each burgers}}
+                            {{#if this.devoured}}
+                            {{#unless this.deleted}}
+                            <form action="/delete/{{this.id}}" method="POST">
+                                <button class="btn waves-effect red accent-4 marg-bot-10 waves-light devoured truncate col s12 z-depth-5 hoverable tooltipped2"
+                                    type="submit" name="action">{{this.burger_name}}
+                                    <i class="fas fa-trash right"></i>
+                                </button>
+                            </form>
+                            {{/unless}}
+                            {{/if}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card horizontal offset-l3 col l6 m12 s12">
+            <div class="card-stacked">
+                <h3 class="center title-sancreek">
+                    Add a Burger
+                </h3>
+                <div class="divider"></div>
+                <div class="card-content">
+                    <form action="/burgers/create" method="POST">
+                        <div class="input-field col s12 addBurg">
+                            <input placeholder="Cheese Burger" type="text" class="addBurger" name="addBurger"
+                                required="" aria-required="true" oninvalid="this.setCustomValidity('Please Enter a Burger')"
+                                oninput="setCustomValidity('')"></input>
+                        </div>
+                        <div class="row">
+                            <button class="btn green darken-4 waves-effect waves-light burgButton col offset-s3 s6" type="submit" name="action">Create!
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="page-footer white z-depth-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="black-text title-sancreek">About</h5>
+                        <p class="black-text text-lighten-4">Is a restaurant app that lets users input the names of trendy burgers they'd like to eat.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="black-text title-sancreek">Portfolio</h5>
+                        <ul>
+                            <li><a class="black-text text-lighten-3" href="https://jdb443.github.io/" target="_blank">Jonathan Behar</a></li>
+                        </ul>
+                        <h5 class="black-text title-sancreek">GitHub</h5>
+                        <ul>
+                            <li><a class="black-text text-lighten-3" href="https://github.com/jdb443/sequelizedburger" target="_blank">GitHub Repo</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container center">
+                    <a class="light-blue-text text-darken-4 text-lighten-4 title-rye-16" href="https://jdb443.github.io/" target="_blank"><strong>&#xa9; 2019 Jonathan Behar</strong></a>
+                </div>
+            </div>
+    </footer>
+</div>
