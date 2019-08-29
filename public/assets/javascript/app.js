@@ -25,11 +25,40 @@ $(function() {
         };
 
         $.ajax("/api/burgers", {
-            type: "POST",
+            type: "PUT",
             data: newBurger
         }).then(function() {
             console.log("Added another burger to the menu");
             location.reload();
         });
     });
+    $('.devoured').on('click', function(event){
+        const id= event.target.name
+        $.ajax(`/api/burgers/${id}`, {
+            method: 'DELETE',
+            data: id
+        });
+        location.reload();
+    });
+
 });
+
+// $(function () {
+
+//     $('.tooltipped').tooltip({
+//         exitDelay: 800,
+//         html: 'Click me if you are hungry!',
+//         position: 'left',
+//         inDuration: 800,
+//         outDuration: 800,
+
+//     });
+//     $('.tooltipped2').tooltip({
+//         exitDelay: 800,
+//         html: 'Carefull! It will be gone for good!',
+//         position: 'right',
+//         inDuration: 800,
+//         outDuration: 800,
+
+//     });
+// });
