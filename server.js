@@ -30,8 +30,12 @@
 require("dotenv").config();
 
 var express = require("express");
+<<<<<<< HEAD
 var db = require("./models"); 
 
+=======
+const db = require('./models');
+>>>>>>> 915b8c10e9ac2fec51788dac84a999a24302575c
 var PORT = process.env.PORT || 8000;
 
 var app = express();
@@ -54,6 +58,7 @@ var routes = require("./controllers/burgersController.js");
 
 app.use(routes);
 
+<<<<<<< HEAD
 // Configure our database, if successful then start our app server so that it can begin listening to client requests
 db.sequelize.sync({force : false }).then(function () {
   app.listen(PORT, function() {
@@ -61,3 +66,11 @@ db.sequelize.sync({force : false }).then(function () {
     console.log("Server listening on: http://localhost:" + PORT);
   });
 });
+=======
+db.sequelize.sync({force:true}).then(function(){
+    console.log('Connected to Database');
+    app.listen(PORT, function() {
+        console.log("App now listening at localhost:" + PORT);
+    });
+});
+>>>>>>> 915b8c10e9ac2fec51788dac84a999a24302575c

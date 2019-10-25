@@ -3,10 +3,18 @@
 -- CREATE DATABASE burgerssq_db;
 USE gcjvqmp1mxqht2xo;
 
+<<<<<<< HEAD
 CREATE TABLE burgers (
     id INTEGER AUTO_INCREMENT NOT NULL,
     burger_name VARCHAR(100) NOT NULL,
     devoured boolean DEFAULT false,
     createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
+=======
+CREATE TABLE burgerssq (
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	name VARCHAR(30) NOT NULL,
+	devoured BOOLEAN NOT NULL DEFAULT false,
+	PRIMARY KEY (id)
+>>>>>>> 915b8c10e9ac2fec51788dac84a999a24302575c
 );

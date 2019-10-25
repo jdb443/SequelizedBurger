@@ -23,7 +23,7 @@
                             {{#unless this.devoured}}
                             <form action="/api/burgers/{{this.id}}" method="POST">
                                 <button class="btn waves-effect blue darken-4 marg-bot-10 waves-light uneaten truncate col s12 z-depth-5 hoverable tooltipped"
-                                    type="submit" name="action">{{this.burger_name}}
+                                    type="submit" name="action">{{this.name}}
 
                                 </button>
                             </form>
@@ -44,12 +44,12 @@
                             {{#each burgers}}
                             {{#if this.devoured}}
                             {{#unless this.deleted}}
-                            <form action="/delete/{{this.id}}" method="POST">
+                            {{!-- <form action="/api/burgers/{{this.id}}" method="GET"> --}}
                                 <button class="btn waves-effect red accent-4 marg-bot-10 waves-light devoured truncate col s12 z-depth-5 hoverable tooltipped2"
-                                    type="submit" name="action">{{this.burger_name}}
+                                    type="submit" name={{this.id}}>{{this.name}}
                                     <i class="fas fa-trash right"></i>
                                 </button>
-                            </form>
+                            {{!-- </form> --}}
                             {{/unless}}
                             {{/if}}
                             {{/each}}
