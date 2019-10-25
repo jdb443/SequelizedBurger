@@ -1,11 +1,12 @@
 -- DROP DATABASE IF EXISTS burgerssq_db;
 
 -- CREATE DATABASE burgerssq_db;
-USE `process.env.DATA_DATABASE`;
+USE gcjvqmp1mxqht2xo;
 
-CREATE TABLE burgerssq (
-	id INTEGER NOT NULL AUTO_INCREMENT,
-	burger_name VARCHAR(30) NOT NULL,
-	devoured BOOLEAN NOT NULL DEFAULT false,
-	PRIMARY KEY (id)
+CREATE TABLE burgers (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    burger_name VARCHAR(100) NOT NULL,
+    devoured boolean DEFAULT false,
+    createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
 );

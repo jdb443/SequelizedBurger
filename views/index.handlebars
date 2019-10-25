@@ -21,7 +21,7 @@
                         <div class="col s12 buttons">
                             {{#each burgers}}
                             {{#unless this.devoured}}
-                            <form action="/burgers/{{this.id}}" method="POST">
+                            <form action="/api/burgers/{{this.id}}" method="POST">
                                 <button class="btn waves-effect blue darken-4 marg-bot-10 waves-light uneaten truncate col s12 z-depth-5 hoverable tooltipped"
                                     type="submit" name="action">{{this.burger_name}}
 
