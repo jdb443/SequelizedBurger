@@ -22,27 +22,6 @@
 //         });
 //     }
 // };
-<<<<<<< HEAD
-
-// module.exports = burger;
-
-module.exports = function(sequelize, DataTypes) {
-    var burger = sequelize.define("Burger", {
-        burger_name: {
-            type: DataTypes.STRING,
-            // allowNull: false
-        },
-        devoured: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false
-        }, 
-    // {
-    //     freezeTableName: true
-    // }
-    });
-    return burger;
-};
-=======
 
 // module.exports = burger;
 
@@ -58,5 +37,4 @@ module.exports = function(sequelize, DataTypes) {
     });
     return Burger;
   };
->>>>>>> 915b8c10e9ac2fec51788dac84a999a24302575c
   
