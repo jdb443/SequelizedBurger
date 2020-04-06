@@ -24,6 +24,7 @@
     "express-handlebars": "^3.1.0",
     "mysql": "^2.17.1",
     "mysql2": "^1.7.0",
+    "npm-force-resolutions": "0.0.3",
     "sequelize": "^5.21.2",
     "sequelize-cli": "^5.5.1"
   },
